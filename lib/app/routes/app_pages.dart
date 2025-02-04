@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 
-import '../modules/modules_auth/forgot_password/bindings/forgot_password_binding.dart';
-import '../modules/modules_auth/forgot_password/views/forgot_password_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/main_app/bindings/main_app_binding.dart';
+import '../modules/main_app/views/main_app_view.dart';
+import '../modules/modules_auth/forgot_password/bindings/forgot_password_binding.dart';
+import '../modules/modules_auth/forgot_password/views/forgot_password_view.dart';
 import '../modules/modules_auth/sigin/bindings/sigin_binding.dart';
 import '../modules/modules_auth/sigin/views/sigin_view.dart';
 import '../modules/modules_auth/sigup/bindings/sigup_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.forgotPassword,
       page: () => const ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAIN_APP,
+      page: () => const MainAppView(),
+      binding: MainAppBinding(),
     ),
   ];
 }

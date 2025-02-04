@@ -1,5 +1,5 @@
 import 'package:aswayapp/app/styles/color.dart';
-import 'package:aswayapp/app/styles/fonts.dart';
+import 'package:aswayapp/app/styles/fonts_fldev.dart';
 import 'package:flutter/material.dart';
 
 class BtnWithIcon extends StatelessWidget {

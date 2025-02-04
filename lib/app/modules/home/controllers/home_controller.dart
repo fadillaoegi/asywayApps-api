@@ -1,21 +1,31 @@
-import 'package:get/get.dart';
+import 'dart:async';
+
+import 'package:get/get_rx/get_rx.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class HomeController extends GetxController {
-  final count = 0.obs;
+  final isCheckInOut = true.obs;
+  final dateTimeNow = DateTime.now().obs;
+  Timer? _timer;
   @override
   void onInit() {
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
+    _startTimer();
   }
 
   @override
   void onClose() {
+    _timer?.cancel();
     super.onClose();
   }
 
-  void increment() => count.value++;
+  exctuteCheckInOut() {
+    isCheckInOut.value = !isCheckInOut.value;
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      dateTimeNow.value = DateTime.now();
+    });
+  }
 }
