@@ -7,11 +7,11 @@ class ThemeConfigFLdev {
     return ThemeData(
         scaffoldBackgroundColor: Color(0xffFDFDFD),
         textTheme: GoogleFonts.poppinsTextTheme(),
-        indicatorColor: ColorApps.primary,
+        indicatorColor: ColorAppsFLdev.primary,
         appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(color: ColorApps.primary),
-            backgroundColor: ColorApps.white),
+            iconTheme: IconThemeData(color: ColorAppsFLdev.primary),
+            backgroundColor: ColorAppsFLdev.white),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-            backgroundColor: ColorApps.white));
+            backgroundColor: ColorAppsFLdev.white));
   }
 }

@@ -30,7 +30,7 @@ class BtnApps extends StatelessWidget {
       child: ElevatedButton(
           onPressed: onPress,
           style: ElevatedButton.styleFrom(
-            backgroundColor: color ?? ColorApps.primary,
+            backgroundColor: color ?? ColorAppsFLdev.primary,
             shadowColor: Colors.black.withValues(alpha: 0.10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),

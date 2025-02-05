@@ -7,7 +7,7 @@ abstract class Routes {
   static const signin = _Paths.signin;
   static const signup = _Paths.signup;
   static const forgotPassword = _Paths.forgotPassword;
-  static const MAIN_APP = _Paths.MAIN_APP;
+  static const mainApp = _Paths.mainApp;
 }
 
 abstract class _Paths {
@@ -16,5 +16,5 @@ abstract class _Paths {
   static const signin = '/sigin';
   static const signup = '/sigup';
   static const forgotPassword = '/forgot-password';
-  static const MAIN_APP = '/main-app';
+  static const mainApp = '/main-app';
 }

@@ -20,8 +20,8 @@ class BtnWithIcon extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
-            color: ColorApps.white,
-            border: Border.all(color: ColorApps.primary),
+            color: ColorAppsFLdev.white,
+            border: Border.all(color: ColorAppsFLdev.primary),
             borderRadius: BorderRadius.circular(10.0)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

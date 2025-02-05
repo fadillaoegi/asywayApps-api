@@ -1,5 +1,4 @@
-import 'package:get/get.dart';
-
+import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/main_app/bindings/main_app_binding.dart';
@@ -10,7 +9,6 @@ import '../modules/modules_auth/sigin/bindings/sigin_binding.dart';
 import '../modules/modules_auth/sigin/views/sigin_view.dart';
 import '../modules/modules_auth/sigup/bindings/sigup_binding.dart';
 import '../modules/modules_auth/sigup/views/sigup_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -40,7 +38,7 @@ class AppPages {
       binding: ForgotPasswordBinding(),
     ),
     GetPage(
-      name: _Paths.MAIN_APP,
+      name: _Paths.mainApp,
       page: () => const MainAppView(),
       binding: MainAppBinding(),
     ),

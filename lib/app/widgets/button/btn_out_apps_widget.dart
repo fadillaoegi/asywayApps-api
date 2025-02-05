@@ -18,7 +18,7 @@ class OutBtnApps extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0)),
-              side: const BorderSide(color: ColorApps.primary),
+              side: const BorderSide(color: ColorAppsFLdev.primary),
             ),
             child: Text(
               text!,
