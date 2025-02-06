@@ -42,6 +42,7 @@ dependencies:
   intl_phone_field: ^3.2.0
   shared_preferences: ^2.5.1
   flutter_launcher_icons: ^0.14.3
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:
@@ -52,14 +53,14 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/images/aswayLogo.png"
-  remove_alpha_ios: true
-  min_sdk_android: 21
-  adaptive_icon_background: "#ffffff"
-  adaptive_icon_foreground: "assets/images/aswayLogo.png"
+  # flutter_launcher_icons:
+  #   android: "launcher_icon"
+  #   ios: true
+  #   image_path: "assets/images/aswayLogo.png"
+  #   remove_alpha_ios: true
+  #   min_sdk_android: 21
+  #   adaptive_icon_background: "#ffffff"
+  #   adaptive_icon_foreground: "assets/images/aswayLogo.png"
   flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the

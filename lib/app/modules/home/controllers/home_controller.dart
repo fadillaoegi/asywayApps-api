@@ -1,16 +1,20 @@
 import 'dart:async';
-
-import 'package:get/get_rx/get_rx.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:get/get.dart';
 
 class HomeController extends GetxController {
   final isCheckInOut = true.obs;
   final dateTimeNow = DateTime.now().obs;
   final greeting = "Selamat Pagi".obs;
+  final checkInOut = false.obs;
   Timer? _timer;
+  final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+
   @override
   void onInit() {
     super.onInit();
+    _initializeNotifications();
     _startTimer();
   }
 
@@ -20,11 +24,51 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
+  exctuteCheckInOut() {
+    checkInOut.value = !checkInOut.value;
+    update();
+  }
+
+  void _initializeNotifications() async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    final InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
+    await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+  }
+
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       dateTimeNow.value = DateTime.now();
       greeting.value = getGreeting(); // Update greeting setiap detik
+      _checkAndSendNotification();
     });
+  }
+
+  void _checkAndSendNotification() {
+    DateTime now = DateTime.now();
+    if (now.hour == 15 && now.minute == 55) {
+      _sendNotification();
+    }
+  }
+
+  Future<void> _sendNotification() async {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails(
+      'check_out_reminder',
+      'Check-Out Reminder',
+      channelDescription: 'Notifikasi pengingat untuk check-out kerja',
+      importance: Importance.high,
+      priority: Priority.high,
+    );
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+      0,
+      'Pengingat Check-Out',
+      'Sudah hampir waktu check-out, silakan lakukan check-out sebelum pukul 16:00!',
+      platformChannelSpecifics,
+    );
   }
 
   String getGreeting() {
@@ -40,7 +84,7 @@ class HomeController extends GetxController {
     }
   }
 
-  exctuteCheckInOut() {
+  void executeCheckInOut() {
     isCheckInOut.value = !isCheckInOut.value;
   }
 }
