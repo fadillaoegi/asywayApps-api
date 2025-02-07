@@ -6,7 +6,7 @@ class HomeController extends GetxController {
   final isCheckInOut = true.obs;
   final dateTimeNow = DateTime.now().obs;
   final greeting = "Selamat Pagi".obs;
-  final checkInOut = false.obs;
+  final checkInOut = true.obs;
   Timer? _timer;
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
@@ -86,5 +86,6 @@ class HomeController extends GetxController {
 
   void executeCheckInOut() {
     isCheckInOut.value = !isCheckInOut.value;
+    update();
   }
 }
